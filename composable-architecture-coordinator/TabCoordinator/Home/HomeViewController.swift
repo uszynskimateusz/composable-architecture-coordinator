@@ -17,10 +17,6 @@ class HomeViewController: UIViewController {
         setupHomeView()
     }
     
-    deinit {
-        print("ReadyViewController deinit")
-    }
-    
     private func setupHomeView() {
         addChild(homeView)
         view.addSubview(homeView.view)

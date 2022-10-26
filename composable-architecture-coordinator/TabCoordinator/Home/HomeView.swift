@@ -12,7 +12,7 @@ struct HomeView: View {
     
     var body: some View {
         List(items) { item in
-            Text(item.name)
+            ProductView(product: item)
         }
     }
 }
