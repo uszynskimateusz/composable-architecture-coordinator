@@ -5,7 +5,6 @@
 //  Created by Mateusz Uszyński on 25/10/2022.
 //
 
-import UIKit
 import SwiftUI
 
 class AccountViewController: UIViewController {
