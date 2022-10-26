@@ -104,13 +104,6 @@ class TabCoordinator: NSObject, Coordinator {
         switch page {
         case .home:
             let homeVC = HomeViewController()
-            homeVC.didSendEventClosure = { [weak self] event in
-                switch event {
-                case .ready:
-                    self?.selectPage(.account)
-                }
-            }
-            
             navController.pushViewController(homeVC, animated: true)
         case .account:
             let accountVC = AccountViewController()

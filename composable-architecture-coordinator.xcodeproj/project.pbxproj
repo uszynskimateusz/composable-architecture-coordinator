@@ -19,6 +19,10 @@
 		21ADFDC42907D45F00D7AC4E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21ADFDC32907D45F00D7AC4E /* HomeViewController.swift */; };
 		21B58BFC2906CFA200FAE0A3 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B58BFB2906CFA200FAE0A3 /* AppCoordinator.swift */; };
 		21B58C002906D36C00FAE0A3 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B58BFF2906D36C00FAE0A3 /* Coordinator.swift */; };
+		21D8EFCF29092C00001D6C35 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 21D8EFCE29092C00001D6C35 /* ComposableArchitecture */; };
+		21D8EFD129092C00001D6C35 /* Dependencies in Frameworks */ = {isa = PBXBuildFile; productRef = 21D8EFD029092C00001D6C35 /* Dependencies */; };
+		21D8EFD429092FA4001D6C35 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D8EFD329092FA4001D6C35 /* HomeView.swift */; };
+		21D8EFD72909308A001D6C35 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D8EFD62909308A001D6C35 /* Product.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +59,8 @@
 		21ADFDC32907D45F00D7AC4E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		21B58BFB2906CFA200FAE0A3 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		21B58BFF2906D36C00FAE0A3 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		21D8EFD329092FA4001D6C35 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		21D8EFD62909308A001D6C35 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +68,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21D8EFCF29092C00001D6C35 /* ComposableArchitecture in Frameworks */,
+				21D8EFD129092C00001D6C35 /* Dependencies in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +113,7 @@
 		218B88AF2906BCAB005C16EB /* composable-architecture-coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				21D8EFD52909307B001D6C35 /* Models */,
 				21ADFDBE2907D29A00D7AC4E /* TabCoordinator */,
 				21B58BFE2906D34E00FAE0A3 /* Coordinator */,
 				21B58BFA2906CF8D00FAE0A3 /* AppCoordinator */,
@@ -137,9 +146,9 @@
 		21ADFDBE2907D29A00D7AC4E /* TabCoordinator */ = {
 			isa = PBXGroup;
 			children = (
+				21D8EFD229092F85001D6C35 /* Home */,
 				21ADFDBF2907D31D00D7AC4E /* TabCoordinator.swift */,
 				21ADFDC12907D44000D7AC4E /* AccountViewController.swift */,
-				21ADFDC32907D45F00D7AC4E /* HomeViewController.swift */,
 			);
 			path = TabCoordinator;
 			sourceTree = "<group>";
@@ -160,6 +169,23 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
+		21D8EFD229092F85001D6C35 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				21ADFDC32907D45F00D7AC4E /* HomeViewController.swift */,
+				21D8EFD329092FA4001D6C35 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		21D8EFD52909307B001D6C35 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				21D8EFD62909308A001D6C35 /* Product.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -176,6 +202,10 @@
 			dependencies = (
 			);
 			name = "composable-architecture-coordinator";
+			packageProductDependencies = (
+				21D8EFCE29092C00001D6C35 /* ComposableArchitecture */,
+				21D8EFD029092C00001D6C35 /* Dependencies */,
+			);
 			productName = "composable-architecture-coordinator";
 			productReference = 218B88AD2906BCAB005C16EB /* composable-architecture-coordinator.app */;
 			productType = "com.apple.product-type.application";
@@ -248,6 +278,9 @@
 				Base,
 			);
 			mainGroup = 218B88A42906BCAB005C16EB;
+			packageReferences = (
+				21D8EFCD29092C00001D6C35 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = 218B88AE2906BCAB005C16EB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -292,9 +325,11 @@
 			files = (
 				21ADFDC42907D45F00D7AC4E /* HomeViewController.swift in Sources */,
 				21ADFDC22907D44000D7AC4E /* AccountViewController.swift in Sources */,
+				21D8EFD72909308A001D6C35 /* Product.swift in Sources */,
 				21B58BFC2906CFA200FAE0A3 /* AppCoordinator.swift in Sources */,
 				21B58C002906D36C00FAE0A3 /* Coordinator.swift in Sources */,
 				218B88B12906BCAB005C16EB /* AppDelegate.swift in Sources */,
+				21D8EFD429092FA4001D6C35 /* HomeView.swift in Sources */,
 				21ADFDC02907D31D00D7AC4E /* TabCoordinator.swift in Sources */,
 				218B88B32906BCAB005C16EB /* SceneDelegate.swift in Sources */,
 			);
@@ -630,6 +665,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		21D8EFCD29092C00001D6C35 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		21D8EFCE29092C00001D6C35 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 21D8EFCD29092C00001D6C35 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+		21D8EFD029092C00001D6C35 /* Dependencies */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 21D8EFCD29092C00001D6C35 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = Dependencies;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 218B88A52906BCAB005C16EB /* Project object */;
 }
