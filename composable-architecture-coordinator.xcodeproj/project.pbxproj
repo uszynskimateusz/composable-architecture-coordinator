@@ -9,13 +9,16 @@
 /* Begin PBXBuildFile section */
 		218B88B12906BCAB005C16EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218B88B02906BCAB005C16EB /* AppDelegate.swift */; };
 		218B88B32906BCAB005C16EB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218B88B22906BCAB005C16EB /* SceneDelegate.swift */; };
-		218B88B52906BCAB005C16EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218B88B42906BCAB005C16EB /* ViewController.swift */; };
-		218B88B82906BCAB005C16EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 218B88B62906BCAB005C16EB /* Main.storyboard */; };
 		218B88BA2906BCAC005C16EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 218B88B92906BCAC005C16EB /* Assets.xcassets */; };
 		218B88BD2906BCAC005C16EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 218B88BB2906BCAC005C16EB /* LaunchScreen.storyboard */; };
 		218B88C82906BCAC005C16EB /* composable_architecture_coordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218B88C72906BCAC005C16EB /* composable_architecture_coordinatorTests.swift */; };
 		218B88D22906BCAC005C16EB /* composable_architecture_coordinatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218B88D12906BCAC005C16EB /* composable_architecture_coordinatorUITests.swift */; };
 		218B88D42906BCAC005C16EB /* composable_architecture_coordinatorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218B88D32906BCAC005C16EB /* composable_architecture_coordinatorUITestsLaunchTests.swift */; };
+		21ADFDC02907D31D00D7AC4E /* TabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21ADFDBF2907D31D00D7AC4E /* TabCoordinator.swift */; };
+		21ADFDC22907D44000D7AC4E /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21ADFDC12907D44000D7AC4E /* AccountViewController.swift */; };
+		21ADFDC42907D45F00D7AC4E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21ADFDC32907D45F00D7AC4E /* HomeViewController.swift */; };
+		21B58BFC2906CFA200FAE0A3 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B58BFB2906CFA200FAE0A3 /* AppCoordinator.swift */; };
+		21B58C002906D36C00FAE0A3 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B58BFF2906D36C00FAE0A3 /* Coordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +42,6 @@
 		218B88AD2906BCAB005C16EB /* composable-architecture-coordinator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "composable-architecture-coordinator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		218B88B02906BCAB005C16EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		218B88B22906BCAB005C16EB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		218B88B42906BCAB005C16EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		218B88B72906BCAB005C16EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		218B88B92906BCAC005C16EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		218B88BC2906BCAC005C16EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		218B88BE2906BCAC005C16EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +50,11 @@
 		218B88CD2906BCAC005C16EB /* composable-architecture-coordinatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "composable-architecture-coordinatorUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		218B88D12906BCAC005C16EB /* composable_architecture_coordinatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = composable_architecture_coordinatorUITests.swift; sourceTree = "<group>"; };
 		218B88D32906BCAC005C16EB /* composable_architecture_coordinatorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = composable_architecture_coordinatorUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		21ADFDBF2907D31D00D7AC4E /* TabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCoordinator.swift; sourceTree = "<group>"; };
+		21ADFDC12907D44000D7AC4E /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		21ADFDC32907D45F00D7AC4E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		21B58BFB2906CFA200FAE0A3 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		21B58BFF2906D36C00FAE0A3 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +105,11 @@
 		218B88AF2906BCAB005C16EB /* composable-architecture-coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				21ADFDBE2907D29A00D7AC4E /* TabCoordinator */,
+				21B58BFE2906D34E00FAE0A3 /* Coordinator */,
+				21B58BFA2906CF8D00FAE0A3 /* AppCoordinator */,
 				218B88B02906BCAB005C16EB /* AppDelegate.swift */,
 				218B88B22906BCAB005C16EB /* SceneDelegate.swift */,
-				218B88B42906BCAB005C16EB /* ViewController.swift */,
-				218B88B62906BCAB005C16EB /* Main.storyboard */,
 				218B88B92906BCAC005C16EB /* Assets.xcassets */,
 				218B88BB2906BCAC005C16EB /* LaunchScreen.storyboard */,
 				218B88BE2906BCAC005C16EB /* Info.plist */,
@@ -125,6 +132,32 @@
 				218B88D32906BCAC005C16EB /* composable_architecture_coordinatorUITestsLaunchTests.swift */,
 			);
 			path = "composable-architecture-coordinatorUITests";
+			sourceTree = "<group>";
+		};
+		21ADFDBE2907D29A00D7AC4E /* TabCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				21ADFDBF2907D31D00D7AC4E /* TabCoordinator.swift */,
+				21ADFDC12907D44000D7AC4E /* AccountViewController.swift */,
+				21ADFDC32907D45F00D7AC4E /* HomeViewController.swift */,
+			);
+			path = TabCoordinator;
+			sourceTree = "<group>";
+		};
+		21B58BFA2906CF8D00FAE0A3 /* AppCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				21B58BFB2906CFA200FAE0A3 /* AppCoordinator.swift */,
+			);
+			path = AppCoordinator;
+			sourceTree = "<group>";
+		};
+		21B58BFE2906D34E00FAE0A3 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				21B58BFF2906D36C00FAE0A3 /* Coordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +266,6 @@
 			files = (
 				218B88BD2906BCAC005C16EB /* LaunchScreen.storyboard in Resources */,
 				218B88BA2906BCAC005C16EB /* Assets.xcassets in Resources */,
-				218B88B82906BCAB005C16EB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,8 +290,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				218B88B52906BCAB005C16EB /* ViewController.swift in Sources */,
+				21ADFDC42907D45F00D7AC4E /* HomeViewController.swift in Sources */,
+				21ADFDC22907D44000D7AC4E /* AccountViewController.swift in Sources */,
+				21B58BFC2906CFA200FAE0A3 /* AppCoordinator.swift in Sources */,
+				21B58C002906D36C00FAE0A3 /* Coordinator.swift in Sources */,
 				218B88B12906BCAB005C16EB /* AppDelegate.swift in Sources */,
+				21ADFDC02907D31D00D7AC4E /* TabCoordinator.swift in Sources */,
 				218B88B32906BCAB005C16EB /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,14 +333,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		218B88B62906BCAB005C16EB /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				218B88B72906BCAB005C16EB /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		218B88BB2906BCAC005C16EB /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
