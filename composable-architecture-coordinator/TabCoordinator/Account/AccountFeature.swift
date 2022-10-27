@@ -8,7 +8,9 @@
 import Foundation
 import ComposableArchitecture
 
-struct AccountState: Equatable {}
+struct AccountState: Equatable {
+    var currentScreen: AccountScreen?
+}
 
 enum AccountAction: Equatable {
     case onSignInButtonTapped
@@ -24,8 +26,15 @@ let accountReducer = AnyReducer<
 > { state, action, environment in
     switch action {
     case .onSignInButtonTapped:
+        state.currentScreen = .login
         return .none
     case .onSignOutButtonTapped:
+        state.currentScreen = nil
         return .none
     }
 }.debug()
+
+
+enum AccountScreen {
+    case login
+}

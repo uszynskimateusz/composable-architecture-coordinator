@@ -180,12 +180,12 @@
 		21ADFDBE2907D29A00D7AC4E /* TabCoordinator */ = {
 			isa = PBXGroup;
 			children = (
-				21C83E5F290AB6270050FCE5 /* Repository */,
-				21C83E5C290AB5EA0050FCE5 /* Favorites */,
-				21C83E47290A74490050FCE5 /* Tab */,
-				21D8EFDE290945BB001D6C35 /* Login */,
 				21D8EFD829093BEA001D6C35 /* Account */,
+				21C83E5C290AB5EA0050FCE5 /* Favorites */,
 				21D8EFD229092F85001D6C35 /* Home */,
+				21D8EFDE290945BB001D6C35 /* Login */,
+				21C83E5F290AB6270050FCE5 /* Repository */,
+				21C83E47290A74490050FCE5 /* Tab */,
 			);
 			path = TabCoordinator;
 			sourceTree = "<group>";

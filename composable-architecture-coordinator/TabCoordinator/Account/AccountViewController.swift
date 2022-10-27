@@ -7,10 +7,12 @@
 
 import SwiftUI
 import ComposableArchitecture
+import Combine
 
 class AccountViewController: UIViewController {
     private lazy var accountView = UIHostingController(rootView: AccountView(store: store.scope(state: \.accountState,
                                                                                                 action: AppAction.accountAction)))
+    var cancellables: Set<AnyCancellable> = []
     
     private let store: Store<AppState, AppAction>
     
@@ -29,7 +31,31 @@ class AccountViewController: UIViewController {
         super.viewDidLoad()
         
         setupAccountView()
+        bindToStore()
     }
+    
+    func bindToStore() {
+        let viewStore = ViewStore(store.scope(state: \.accountState,
+                                              action: AppAction.accountAction))
+        
+        viewStore
+            .publisher
+            .currentScreen
+            .sink { [weak self] screen in
+                guard let screen = screen,
+                      let self = self
+                else { return }
+                
+                switch screen {
+                case .login:
+                    let loginVC = LoginViewController(store: self.store)
+                    self.present(loginVC, animated: true)
+                    break
+                }
+            }
+            .store(in: &self.cancellables)
+    }
+    
     
     private func setupAccountView() {
         addChild(accountView)
