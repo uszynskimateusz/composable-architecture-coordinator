@@ -37,7 +37,6 @@
 		21D8EFDA29093BFE001D6C35 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D8EFD929093BFE001D6C35 /* AccountView.swift */; };
 		21D8EFE0290945FD001D6C35 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D8EFDF290945FD001D6C35 /* LoginView.swift */; };
 		21D8EFE22909460A001D6C35 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D8EFE12909460A001D6C35 /* LoginViewController.swift */; };
-		21D8EFE529096330001D6C35 /* LoginFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D8EFE429096330001D6C35 /* LoginFeature.swift */; };
 		21D8EFE8290966CA001D6C35 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D8EFE7290966CA001D6C35 /* User.swift */; };
 /* End PBXBuildFile section */
 
@@ -91,7 +90,6 @@
 		21D8EFD929093BFE001D6C35 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		21D8EFDF290945FD001D6C35 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		21D8EFE12909460A001D6C35 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		21D8EFE429096330001D6C35 /* LoginFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFeature.swift; sourceTree = "<group>"; };
 		21D8EFE7290966CA001D6C35 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -283,7 +281,6 @@
 			children = (
 				21D8EFE12909460A001D6C35 /* LoginViewController.swift */,
 				21D8EFDF290945FD001D6C35 /* LoginView.swift */,
-				21D8EFE429096330001D6C35 /* LoginFeature.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -446,7 +443,6 @@
 				21C83E63290AB90B0050FCE5 /* FavoritesViewController.swift in Sources */,
 				21B58C002906D36C00FAE0A3 /* Coordinator.swift in Sources */,
 				21C83E61290AB6D20050FCE5 /* HomeFeature.swift in Sources */,
-				21D8EFE529096330001D6C35 /* LoginFeature.swift in Sources */,
 				21C83E4B290A7A9B0050FCE5 /* AppFeature.swift in Sources */,
 				21C83E5E290AB5FB0050FCE5 /* FavoritesView.swift in Sources */,
 				21D8EFE0290945FD001D6C35 /* LoginView.swift in Sources */,

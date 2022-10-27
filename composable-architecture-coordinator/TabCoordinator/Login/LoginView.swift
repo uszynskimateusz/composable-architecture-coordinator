@@ -12,7 +12,7 @@ struct LoginView: View {
     @State var loginFieldText: String = ""
     @State var passwordFieldText: String = ""
     
-    let store: Store<LoginState, LoginAction>
+    let store: Store<AccountState, AccountAction>
     
     var body: some View {
         WithViewStore(self.store) { viewStore in
@@ -22,13 +22,13 @@ struct LoginView: View {
             TextField("Password...", text: $passwordFieldText)
                 .textFieldStyle(.roundedBorder)
             
-            Button("Sign out") {
+            Button("Sign in") {
                 viewStore.send(.onButtonTap(email: loginFieldText,
                                             password: passwordFieldText))
             }
             .buttonStyle(GrowingButton())
             .disabled(textIsAppropriate())
-        }
+        }.padding()
     }
     
     func textIsAppropriate() -> Bool {
@@ -38,8 +38,8 @@ struct LoginView: View {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView(store: Store(initialState: LoginState(),
-                               reducer: loginReducer,
-                               environment: .dev(environment: LoginEnvironment(userRequest: dummyUserEffext))))
+        LoginView(store: Store(initialState: AccountState(),
+                               reducer: accountReducer,
+                               environment: .dev(environment: AccountEnvironment(userRequest: dummyUserEffext))))
     }
 }

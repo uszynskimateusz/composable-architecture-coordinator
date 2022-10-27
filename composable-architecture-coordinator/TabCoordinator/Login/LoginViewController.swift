@@ -10,8 +10,8 @@ import ComposableArchitecture
 import Combine
 
 class LoginViewController: UIViewController {
-    private lazy var loginView = UIHostingController(rootView: LoginView(store: store.scope(state: \.loginState,
-                                                                                            action: AppAction.loginAction)))
+    private lazy var loginView = UIHostingController(rootView: LoginView(store: store.scope(state: \.accountState,
+                                                                                            action: AppAction.accountAction)))
     var cancellables: Set<AnyCancellable> = []
     
     private let store: Store<AppState, AppAction>
@@ -26,8 +26,8 @@ class LoginViewController: UIViewController {
     }
     
     func bindToStore() {
-        let viewStore = ViewStore(store.scope(state: \.loginState,
-                                              action: AppAction.loginAction))
+        let viewStore = ViewStore(store.scope(state: \.accountState,
+                                              action: AppAction.accountAction))
         
         viewStore
             .publisher

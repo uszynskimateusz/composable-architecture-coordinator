@@ -16,6 +16,7 @@ struct AccountView: View {
             Button("Sign in") {
                 viewStore.send(.onSignInButtonTapped)
             }
+            .opacity(viewStore.user == nil ? 1 : 0)
             .buttonStyle(GrowingButton())
             
             Spacer().frame(height: 20)
@@ -23,6 +24,7 @@ struct AccountView: View {
             Button("Sign out") {
                 viewStore.send(.onSignOutButtonTapped)
             }
+            .opacity(viewStore.user == nil ? 0 : 1)
             .buttonStyle(GrowingButton())
         }
     }
@@ -32,6 +34,6 @@ struct AccountView_Previews: PreviewProvider {
     static var previews: some View {
         AccountView(store: Store(initialState: AccountState(),
                                  reducer: accountReducer,
-                                 environment: .dev(environment: AccountEnvironment())))
+                                 environment: .dev(environment: AccountEnvironment(userRequest: dummyUserEffext))))
     }
 }
