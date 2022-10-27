@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ComposableArchitecture
 
 protocol TabCoordinatorProtocol: Coordinator {
     var tabBarController: UITabBarController { get set }
@@ -22,15 +23,17 @@ class TabCoordinator: NSObject, Coordinator {
     
     var navigationController: UINavigationController
     
-    var tabBarController: UITabBarController
+    private let tabBarController = UITabBarController()
+    private let store = Store(initialState: AppState(),
+                              reducer: rootReducer,
+                              environment: .live(environment: AppEnvironment()))
     
-    required init(_ navigationController: UINavigationController) {
+    init(_ navigationController: UINavigationController) {
         self.navigationController = navigationController
-        self.tabBarController = .init()
     }
     
     func start() {
-        let pages: [TabBarPage] = [.home, .account]
+        let pages: [TabBarPage] = [.home, .favorites, .account]
         let controllers: [UINavigationController] = pages.map({ getTabController($0) })
         
         prepareTabBarController(withTabControllers: controllers)
@@ -55,12 +58,16 @@ class TabCoordinator: NSObject, Coordinator {
         
         switch page {
         case .home:
-            let homeVC = HomeViewController()
+            let homeVC = HomeViewController(store: store)
             navController.pushViewController(homeVC,
                                              animated: true)
         case .account:
-            let accountVC = AccountViewController()
+            let accountVC = AccountViewController(store: store)
             navController.pushViewController(accountVC,
+                                             animated: true)
+        case .favorites:
+            let favoritesVC = FavoritesViewController(store: store)
+            navController.pushViewController(favoritesVC,
                                              animated: true)
         }
         

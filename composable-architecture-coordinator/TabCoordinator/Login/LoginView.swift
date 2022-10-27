@@ -16,26 +16,18 @@ struct LoginView: View {
     
     var body: some View {
         WithViewStore(self.store) { viewStore in
-            NavigationView {
-                TextField("Email...", text: $loginFieldText)
-                    .textFieldStyle(.roundedBorder)
-                
-                Spacer().frame(height: 20)
-                
-                TextField("Password...", text: $passwordFieldText)
-                    .textFieldStyle(.roundedBorder)
-                
-                Spacer().frame(height: 20)
-                
-                Button("Sign out") {
-                    viewStore.send(.onButtonTap(email: loginFieldText,
-                                                password: passwordFieldText))
-                }
-                .buttonStyle(GrowingButton())
-                .disabled(!textIsAppropriate())
+            TextField("Email...", text: $loginFieldText)
+                .textFieldStyle(.roundedBorder)
+            
+            TextField("Password...", text: $passwordFieldText)
+                .textFieldStyle(.roundedBorder)
+            
+            Button("Sign out") {
+                viewStore.send(.onButtonTap(email: loginFieldText,
+                                            password: passwordFieldText))
             }
-            .padding()
-            .navigationTitle("Log in")
+            .buttonStyle(GrowingButton())
+            .disabled(textIsAppropriate())
         }
     }
     

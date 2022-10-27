@@ -10,6 +10,7 @@ import UIKit
 enum TabBarPage {
     case home
     case account
+    case favorites
     
     init?(index: Int) {
         switch index {
@@ -17,6 +18,8 @@ enum TabBarPage {
             self = .home
         case 1:
             self = .account
+        case 2:
+            self = .favorites
         default:
             return nil
         }
@@ -28,6 +31,8 @@ enum TabBarPage {
             return "Home"
         case .account:
             return "Account"
+        case .favorites:
+            return "Favorites"
         }
     }
     
@@ -37,6 +42,8 @@ enum TabBarPage {
             return 0
         case .account:
             return 1
+        case .favorites:
+            return 2
         }
     }
     
@@ -46,6 +53,8 @@ enum TabBarPage {
             return UIImage(systemName: "house.fill")!
         case .account:
             return UIImage(systemName: "person.fill")!
+        case .favorites:
+            return UIImage(systemName: "heart.fill")!
         }
     }
 }

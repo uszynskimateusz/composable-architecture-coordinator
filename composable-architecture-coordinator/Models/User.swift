@@ -17,6 +17,10 @@ struct UserResponse: Decodable, Equatable {
 }
 
 struct UserName: Decodable, Equatable {
+    let name: UserFirst
+}
+
+struct UserFirst: Decodable, Equatable {
     let first: String
 }
 
@@ -34,6 +38,6 @@ func userEffext(decoder: JSONDecoder) -> Effect<UserResponse, APIError> {
 }
 
 func dummyUserEffext(decoder: JSONDecoder) -> Effect<UserResponse, APIError> {
-    let dummyUser = UserResponse(results: [UserName(first: "John")])
+    let dummyUser = UserResponse(results: [UserName(name: UserFirst(first: "John"))])
     return Effect(value: dummyUser)
 }

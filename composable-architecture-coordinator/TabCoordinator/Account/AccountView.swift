@@ -6,39 +6,32 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 struct AccountView: View {
+    let store: Store<AccountState, AccountAction>
+    
     var body: some View {
-        Button("Sign in") {
-            print("Button tapped!")
+        WithViewStore(self.store) { viewStore in
+            Button("Sign in") {
+                viewStore.send(.onSignInButtonTapped)
+            }
+            .buttonStyle(GrowingButton())
+            
+            Spacer().frame(height: 20)
+            
+            Button("Sign out") {
+                viewStore.send(.onSignOutButtonTapped)
+            }
+            .buttonStyle(GrowingButton())
         }
-        .buttonStyle(GrowingButton())
-        
-        Spacer().frame(height: 20)
-        
-        Button("Sign out") {
-            print("Button tapped!")
-        }
-        .buttonStyle(GrowingButton())
     }
 }
 
 struct AccountView_Previews: PreviewProvider {
     static var previews: some View {
-        AccountView()
-    }
-}
-
-struct GrowingButton: ButtonStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .frame(width: 100)
-            .padding()
-            .background(.blue)
-            .foregroundColor(.white)
-            .clipShape(Capsule())
-            .scaleEffect(configuration.isPressed ? 1.2 : 1)
-            .animation(.easeOut(duration: 0.2),
-                       value: configuration.isPressed)
+        AccountView(store: Store(initialState: AccountState(),
+                                 reducer: accountReducer,
+                                 environment: .dev(environment: AccountEnvironment())))
     }
 }

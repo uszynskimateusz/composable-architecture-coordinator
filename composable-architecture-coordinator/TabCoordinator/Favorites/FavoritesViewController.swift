@@ -1,16 +1,16 @@
 //
-//  ReadyViewController.swift
+//  FavoritesViewController.swift
 //  composable-architecture-coordinator
 //
-//  Created by Mateusz Uszyński on 25/10/2022.
+//  Created by Mateusz Uszyński on 27/10/2022.
 //
 
 import SwiftUI
 import ComposableArchitecture
 
-class HomeViewController: UIViewController {
-    private lazy var homeView = UIHostingController(rootView: HomeView(store: store.scope(state: \.homeState,
-                                                                                          action: AppAction.homeAction)))
+class FavoritesViewController: UIViewController {
+    private lazy var favoritesView = UIHostingController(rootView: FavoritesView(store: store.scope(state: \.homeState,
+                                                                                                    action: AppAction.homeAction)))
     
     private let store: Store<AppState, AppAction>
     
@@ -32,10 +32,11 @@ class HomeViewController: UIViewController {
     }
     
     private func setupHomeView() {
-        addChild(homeView)
-        view.addSubview(homeView.view)
-        homeView.didMove(toParent: self)
+        addChild(favoritesView)
+        view.addSubview(favoritesView.view)
+        favoritesView.didMove(toParent: self)
         
-        homeView.view.frame = self.view.frame
+        favoritesView.view.frame = self.view.frame
     }
 }
+

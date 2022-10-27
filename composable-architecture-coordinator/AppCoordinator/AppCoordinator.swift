@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ComposableArchitecture
 
 class AppCoordinator: Coordinator {
     var navigationController: UINavigationController
@@ -22,7 +23,7 @@ class AppCoordinator: Coordinator {
     }
     
     private func showMainFlow() {
-        let tabCoordinator = TabCoordinator.init(navigationController)
+        let tabCoordinator = TabCoordinator(navigationController)
         tabCoordinator.start()
         childCoordinators.append(tabCoordinator)
     }

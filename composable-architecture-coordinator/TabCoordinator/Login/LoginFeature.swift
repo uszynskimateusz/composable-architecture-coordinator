@@ -29,6 +29,7 @@ let loginReducer = AnyReducer<
     switch action {
     case .onButtonTap(let email,
                       let passowrd):
+        print("TEST: onButtonTap")
         return environment.userRequest(environment.decoder())
             .receive(on: environment.mainQueue())
             .catchToEffect()
@@ -36,12 +37,14 @@ let loginReducer = AnyReducer<
     case .dataLoaded(let result):
         switch result {
         case .success(let response):
-            guard let userName = response.results.first else { return .none }
+            guard let userName = response.results.first?.name else { return .none }
             
             state.user = User(name: userName.first)
+            print("TEST: success user \(userName.first)")
         case .failure:
+            print("TEST: failure")
             break
         }
         return .none
     }
-}
+}.debug()

@@ -17,7 +17,8 @@ class LoginViewController: UIViewController {
     init(store: Store<AppState, AppAction>) {
         self.store = store
         
-        super.init()
+        super.init(nibName: nil,
+                   bundle: nil)
     }
     
     required init?(coder: NSCoder) {
