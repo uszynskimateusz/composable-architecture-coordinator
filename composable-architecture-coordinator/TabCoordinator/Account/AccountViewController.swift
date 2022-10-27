@@ -49,13 +49,13 @@ class AccountViewController: UIViewController {
                 switch screen {
                 case .login:
                     let loginVC = LoginViewController(store: self.store)
-                    self.present(loginVC, animated: true)
+                    self.navigationController?.pushViewController(loginVC,
+                                                                  animated: true)
                     break
                 }
             }
             .store(in: &self.cancellables)
     }
-    
     
     private func setupAccountView() {
         addChild(accountView)

@@ -40,9 +40,7 @@ let loginReducer = AnyReducer<
             guard let userName = response.results.first?.name else { return .none }
             
             state.user = User(name: userName.first)
-            print("TEST: success user \(userName.first)")
         case .failure:
-            print("TEST: failure")
             break
         }
         return .none

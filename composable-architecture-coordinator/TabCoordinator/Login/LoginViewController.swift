@@ -7,10 +7,12 @@
 
 import SwiftUI
 import ComposableArchitecture
+import Combine
 
 class LoginViewController: UIViewController {
     private lazy var loginView = UIHostingController(rootView: LoginView(store: store.scope(state: \.loginState,
                                                                                             action: AppAction.loginAction)))
+    var cancellables: Set<AnyCancellable> = []
     
     private let store: Store<AppState, AppAction>
     
@@ -19,6 +21,21 @@ class LoginViewController: UIViewController {
         
         super.init(nibName: nil,
                    bundle: nil)
+        
+        bindToStore()
+    }
+    
+    func bindToStore() {
+        let viewStore = ViewStore(store.scope(state: \.loginState,
+                                              action: AppAction.loginAction))
+        
+        viewStore
+            .publisher
+            .user
+            .sink { [weak self] _ in
+                self?.navigationController?.popViewController(animated: true)
+            }
+            .store(in: &self.cancellables)
     }
     
     required init?(coder: NSCoder) {
