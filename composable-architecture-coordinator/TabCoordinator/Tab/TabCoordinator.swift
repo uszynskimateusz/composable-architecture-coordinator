@@ -24,12 +24,14 @@ class TabCoordinator: NSObject, Coordinator {
     var navigationController: UINavigationController
     
     private let tabBarController = UITabBarController()
-    private let store = Store(initialState: AppState(),
-                              reducer: rootReducer,
-                              environment: .live(environment: AppEnvironment()))
+    private let store: Store<AppState, AppAction>
     
-    init(_ navigationController: UINavigationController) {
+    init(
+        _ navigationController: UINavigationController,
+        store: Store<AppState, AppAction>
+    ) {
         self.navigationController = navigationController
+        self.store = store
     }
     
     func start() {

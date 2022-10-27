@@ -18,12 +18,17 @@ class AppCoordinator: Coordinator {
                                                     animated: true)
     }
     
+    private let store = Store(initialState: AppState(),
+                              reducer: rootReducer,
+                              environment: .live(environment: AppEnvironment()))
+    
     func start() {
         showMainFlow()
     }
     
     private func showMainFlow() {
-        let tabCoordinator = TabCoordinator(navigationController)
+        let tabCoordinator = TabCoordinator(navigationController,
+                                            store: store)
         tabCoordinator.start()
         childCoordinators.append(tabCoordinator)
     }
