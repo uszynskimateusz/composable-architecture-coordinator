@@ -51,8 +51,8 @@ struct RepositoryView: View {
                 }
             }
             .padding()
-            .foregroundColor(Color("rw-light"))
-            .background(Color("rw-green"))
+            .foregroundColor(Color.white)
+            .background(Color.blue)
             .cornerRadius(8.0)
         }
     }

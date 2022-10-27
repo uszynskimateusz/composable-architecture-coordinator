@@ -21,7 +21,7 @@ struct HomeView: View {
                     }
                 }
             }
-            .background(Color("rw-dark")
+            .background(Color.black
                 .edgesIgnoringSafeArea([.top, .leading, .trailing]))
             .onAppear {
                 viewStore.send(.onAppear)

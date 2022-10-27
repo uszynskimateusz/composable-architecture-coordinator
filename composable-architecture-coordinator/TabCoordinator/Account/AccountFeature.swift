@@ -24,10 +24,8 @@ let accountReducer = AnyReducer<
 > { state, action, environment in
     switch action {
     case .onSignInButtonTapped:
-        print("TEST: onSignInButtonTapped")
         return .none
     case .onSignOutButtonTapped:
-        print("TEST: onSignOutButtonTapped")
         return .none
     }
 }.debug()

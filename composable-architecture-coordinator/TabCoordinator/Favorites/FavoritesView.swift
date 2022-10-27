@@ -21,7 +21,7 @@ struct FavoritesView: View {
                     }
                 }
             }
-            .background(Color("rw-dark")
+            .background(Color.black
                 .edgesIgnoringSafeArea([.top, .leading, .trailing]))
         }
     }
