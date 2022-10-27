@@ -6,31 +6,37 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 struct LoginView: View {
     @State var loginFieldText: String = ""
     @State var passwordFieldText: String = ""
     
+    let store: Store<LoginState, LoginAction>
+    
     var body: some View {
-        NavigationView {
-            TextField("Email...", text: $loginFieldText)
-                .textFieldStyle(.roundedBorder)
-            
-            Spacer().frame(height: 20)
-            
-            TextField("Password...", text: $passwordFieldText)
-                .textFieldStyle(.roundedBorder)
-            
-            Spacer().frame(height: 20)
-            
-            Button("Sign out") {
-                print("Button tapped!")
+        WithViewStore(self.store) { viewStore in
+            NavigationView {
+                TextField("Email...", text: $loginFieldText)
+                    .textFieldStyle(.roundedBorder)
+                
+                Spacer().frame(height: 20)
+                
+                TextField("Password...", text: $passwordFieldText)
+                    .textFieldStyle(.roundedBorder)
+                
+                Spacer().frame(height: 20)
+                
+                Button("Sign out") {
+                    viewStore.send(.onButtonTap(email: loginFieldText,
+                                                password: passwordFieldText))
+                }
+                .buttonStyle(GrowingButton())
+                .disabled(!textIsAppropriate())
             }
-            .buttonStyle(GrowingButton())
-            .disabled(!textIsAppropriate())
+            .padding()
+            .navigationTitle("Log in")
         }
-        .padding()
-        .navigationTitle("Log in")
     }
     
     func textIsAppropriate() -> Bool {
@@ -40,6 +46,8 @@ struct LoginView: View {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        LoginView(store: Store(initialState: LoginState(),
+                               reducer: loginReducer,
+                               environment: .dev(environment: LoginEnvironment(userRequest: dummyUserEffext))))
     }
 }

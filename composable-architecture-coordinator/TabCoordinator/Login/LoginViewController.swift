@@ -6,9 +6,23 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 class LoginViewController: UIViewController {
-    private let loginView = UIHostingController(rootView: LoginView())
+    private lazy var loginView = UIHostingController(rootView: LoginView(store: store.scope(state: \.loginState,
+                                                                                            action: AppAction.loginAction)))
+    
+    private let store: Store<AppState, AppAction>
+    
+    init(store: Store<AppState, AppAction>) {
+        self.store = store
+        
+        super.init()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

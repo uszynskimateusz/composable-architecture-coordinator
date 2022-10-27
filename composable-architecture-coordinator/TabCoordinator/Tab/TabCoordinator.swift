@@ -7,50 +7,6 @@
 
 import UIKit
 
-enum TabBarPage {
-    case home
-    case account
-    
-    init?(index: Int) {
-        switch index {
-        case 0:
-            self = .home
-        case 1:
-            self = .account
-        default:
-            return nil
-        }
-    }
-    
-    func pageTitleValue() -> String {
-        switch self {
-        case .home:
-            return "Home"
-        case .account:
-            return "Account"
-        }
-    }
-    
-    func pageOrderNumber() -> Int {
-        switch self {
-        case .home:
-            return 0
-        case .account:
-            return 1
-        }
-    }
-
-    func icon() -> UIImage {
-        switch self {
-        case .home:
-            return UIImage(systemName: "house.fill")!
-        case .account:
-            return UIImage(systemName: "person.fill")!
-        }
-    }
-}
-
-
 protocol TabCoordinatorProtocol: Coordinator {
     var tabBarController: UITabBarController { get set }
     
@@ -78,10 +34,6 @@ class TabCoordinator: NSObject, Coordinator {
         let controllers: [UINavigationController] = pages.map({ getTabController($0) })
         
         prepareTabBarController(withTabControllers: controllers)
-    }
-    
-    deinit {
-        print("TabCoordinator deinit")
     }
     
     private func prepareTabBarController(withTabControllers tabControllers: [UIViewController]) {
